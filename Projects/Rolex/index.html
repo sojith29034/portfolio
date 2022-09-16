@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolex</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Commons/all.css">
+</head>
+<body>
+    <section>
+        <div class="bg-circle"></div>
+
+        <div class="content">
+            <div class="imagebox">
+                <img src="rolex3.png" class="imgs">
+            </div>
+
+            <div class="intro">
+                <h2>Rolex</h2>
+                <p>Watches for 2021</p>
+
+                <ul class="thumbs">
+                    <li><img src="rolex3.png" onclick="imgSlider('rolex3.png');circleColor('#A37E2C');imgsize('500px')"></li>
+                    <li><img src="rolex2.png" onclick="imgSlider('rolex2.png');circleColor('#969490');imgsize('500px')"></li>
+                    <li><img src="rolex1.png" onclick="imgSlider('rolex1.png');circleColor('#006039');imgsize('500px')"></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="bg-color">
+
+        </section>
+    </main>
+</body>
+
+
+<script>
+    function imgSlider(anything){
+        document.querySelector('.imgs').src = anything;
+    }
+
+    function circleColor(color){
+        const bgCircle = document.querySelector('.bg-circle');
+        bgCircle.style.background = color;
+    }
+
+    function imgsize(value){
+        const imgheight= document.querySelector('.imgs');
+        imgheight.style.height = value;
+    }
+</script>
+
+</html>

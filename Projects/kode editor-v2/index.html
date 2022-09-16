@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kode Editor - v2.0</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="editor">
+        <input type="radio" name="tabs" id="htmlTab" checked>
+        <label for="htmlTab" class="first">HTML</label>
+        <div><textarea id="html" placeholder="HTML Code" autofocus></textarea></div>
+        
+        <input type="radio" name="tabs" id="cssTab">
+        <label for="cssTab">CSS</label>
+        <div><textarea id="css" placeholder="CSS Code"></textarea></div>
+
+        <input type="radio" name="tabs" id="jsTab">
+        <label for="jsTab">JavaScript</label>
+        <div><textarea id="js" placeholder="JavaScript Code"></textarea></div>
+    </div>
+
+    <div class="output">
+        <iframe id="output"></iframe>
+    </div>
+
+</body>
+
+<script src="./script.js"></script>
+</html>
