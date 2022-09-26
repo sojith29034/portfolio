@@ -8,8 +8,9 @@
 }
 
 :root{
-    --bg_color: rgb(220, 220, 220);
-    --sec_bgcolor: rgb(205, 205, 205);
+    --bg_color: #dcdcdc;
+    --sec_bgcolor: #eee;
+    --ter_bgcolor: #f6c90e;
     --border_color: rgb(0, 0, 0);
 
     --pri_text_color: rgb(0, 0, 0);
@@ -237,6 +238,7 @@ h1.greetings{
     border-radius: 90%;
     background-color: #fff;
     box-shadow: 0px 0px 20px #fff;
+    /* border: 1px solid red; */
 }
 .bulb:before{
     content: ' ';
@@ -264,12 +266,8 @@ h1.greetings{
 }
 
 @media (prefers-color-scheme: dark){
-    .bulb{
-        background-color: var(--dm_sec_bgcolor);
-        box-shadow: none;
-    }
-    .bulb:before{
-        background-color: var(--dm_sec_bgcolor);
+    .light{
+        display: none;
     }
 }
 /* --------X-------- Light Bulb ---------X------- */
