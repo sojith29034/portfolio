@@ -1,10 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Oxygen+Mono&family=Poppins:wght@300&family=Source+Code+Pro&display=swap');
 
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
+}
+.container{
+    position: absolute;
+    right: 100px;
+    top: 30px;
+    height: 80px;
+    width: 50px;
+
+    border: 5px solid wheat;
+}
+.container input{
+    display: block;
+    appearance: none;
+    position: absolute;
+    height: inherit;
+    width: inherit;
 }
 
 :root{
@@ -15,18 +30,24 @@
     --pri_text_color: rgb(0, 0, 0);
     --sec_text_color: rgb(0, 4, 255);
 
-
-    /* dark mode color palette */
-    --dm_bg_color: rgb(54, 54, 54);
-    --dm_sec_bgcolor: rgb(40, 40, 40);
-    --dm_border_color: rgba(100, 100, 100, 0.85);
-    
-    --dm_pri_text_color: rgb(252, 252, 225);
-    --dm_sec_text_color: rgb(59, 255, 245);
-
+    --white_shadow: #fff;
+    --bulb: #fff;
 
     /* font family */
     --text_family_1:  'Source Code Pro', monospace;
+}
+
+/* dark mode color palette */
+.darkmode{
+    --bg_color: rgb(54, 54, 54);
+    --sec_bgcolor: rgb(40, 40, 40);
+    --border_color: rgba(100, 100, 100, 0.85);
+    
+    --pri_text_color: rgb(252, 252, 225);
+    --sec_text_color: rgb(59, 255, 245);
+
+    --white_shadow: #545454;
+    --bulb: rgb(40, 40, 40);
 }
 
 body{
@@ -35,12 +56,6 @@ body{
     /* background-color: var(--main_bgcolor); */
     background-color: var(--bg_color);
     /* border: 2px solid red; */
-}
-
-@media (prefers-color-scheme: dark){
-    body{
-        background-color: var(--dm_bg_color);
-    }
 }
 
 a{
@@ -72,7 +87,6 @@ nav ul li{
     background-color: var(--sec_bgcolor);
     border-right: 1px solid var(--border_color);
     border-bottom: 1px solid var(--border_color);
-    transition: .3s ease-in-out;
 }
 nav ul li:hover{
     background-color: transparent;
@@ -152,27 +166,6 @@ input{
         display: block;
     }
 }
-
-@media (prefers-color-scheme: dark){
-    nav ul li{
-        background-color: var(--dm_sec_bgcolor);
-        border-right: 1px solid var(--dm_border_color);
-        border-bottom: 1px solid var(--dm_border_color);
-    }
-    nav ul li a{
-        color: var(--dm_pri_text_color);
-    }
-    nav ul li a:hover{
-        color: var(--dm_sec_text_color);
-    }
-    nav ul>div{
-        border-right: 1px solid var(--dm_border_color);
-        background-color: var(--dm_sec_bgcolor);
-    }
-    nav ul .socials a{
-        color: var(--dm_sec_text_color);
-    }
-}
 /* --------X----- Navigation -------X------ */
 
 /* ----------------- Main ----------------- */
@@ -193,32 +186,17 @@ main h1{
 h1.hello{
     font-size: 36px;
     font-family: 'Poppins', sans-serif;
-    text-shadow: 2px -2px 3px #fff, -1px 2px 3px #000;
+    text-shadow: 2px -2px 3px var(--white_shadow), -1px 2px 3px #000;
 }
 h1.name{
     font-size: 80px;
     font-family: 'Open Sans', sans-serif;
-    text-shadow: 3px -3px 4px #fff, -2px 2px 4px #000;
+    text-shadow: 3px -3px 4px var(--white_shadow), -2px 2px 4px #000;
 }
 h1.greetings{
     font-size: 36px;
     font-family: 'Oxygen Mono', monospace;
-    text-shadow: 2px -2px 3px #fff, -1px 2px 3px #000;
-}
-
-@media (prefers-color-scheme: dark){
-    main h1{
-        color: var(--dm_bg_color);
-    }
-    h1.hello{
-        text-shadow: 1px -1px 2px #616161, -2px 2px 3px #000;
-    }
-    h1.name{
-        text-shadow: 3px -3px 3px #505050, -3px 3px 3px #000;
-    }
-    h1.greetings{
-        text-shadow: 1px -1px 2px #747474, -2px 2px 3px #000;
-    }
+    text-shadow: 2px -2px 3px var(--white_shadow), -1px 2px 3px #000;
 }
 /* ----------------- Light Bulb ----------------- */
 .light{
@@ -235,8 +213,7 @@ h1.greetings{
     height: 60px;
     width: 60px;
     border-radius: 90%;
-    background-color: #fff;
-    box-shadow: 0px 0px 20px #fff;
+    background-color: var(--bulb);
 }
 .bulb:before{
     content: ' ';
@@ -247,7 +224,7 @@ h1.greetings{
     top: -35px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #fff;
+    background-color: var(--bulb);
     border-top: 25px solid #000000;
     border-radius: 10px 10px 0 0;
     /* border: 1px solid red; */
@@ -261,16 +238,6 @@ h1.greetings{
     left: 50%;
     transform: translate(-50%,-50%);
     /* border: 2px solid red; */
-}
-
-@media (prefers-color-scheme: dark){
-    .bulb{
-        background-color: var(--dm_sec_bgcolor);
-        box-shadow: none;
-    }
-    .bulb:before{
-        background-color: var(--dm_sec_bgcolor);
-    }
 }
 /* --------X-------- Light Bulb ---------X------- */
 
