@@ -80,6 +80,20 @@ nav ul li:hover{
     border-right: 1px solid transparent;
     cursor: pointer;
 }
+nav ul li.logo{
+    height: 150px;
+    width: 150px;
+    cursor: default;
+    background-color: var(--sec_bgcolor);
+    border-right: 1px solid var(--border_color);
+    border-bottom: 1px solid var(--border_color);
+}
+nav ul li.logo img{
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    filter: grayscale(1);
+}
 nav ul li a{
     color: var(--pri_text_color);
     font-size: 22px;
@@ -155,7 +169,12 @@ input{
 }
 
 @media (prefers-color-scheme: dark){
-    nav ul li{
+    nav ul>li{
+        background-color: var(--dm_sec_bgcolor);
+        border-right: 1px solid var(--dm_border_color);
+        border-bottom: 1px solid var(--dm_border_color);
+    }
+    nav ul li.logo{
         background-color: var(--dm_sec_bgcolor);
         border-right: 1px solid var(--dm_border_color);
         border-bottom: 1px solid var(--dm_border_color);
