@@ -7,6 +7,19 @@
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar{
+    width: 12px;
+    background: #88888811;
+}
+::-webkit-scrollbar-thumb{
+    background: #25252544;
+    border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #11111188;
+}
+
+
 :root{
     --bg_color: #dcdcdc;
     --sec_bgcolor: #eee;
