@@ -18,6 +18,12 @@
 ::-webkit-scrollbar-thumb:hover{
     background-color: #1111119f;
 }
+@media (max-width: 924px) {
+    ::-webkit-scrollbar{
+        display: none;
+    }
+}
+
 
 :root{
     --bg_color: #dcdcdc;
@@ -56,7 +62,7 @@ body{
     /* border: 2px solid red; */
 }
 @media (max-width: 924px){
-    body{
+    main{
         background-size: 200%;
     }
 }
@@ -121,6 +127,13 @@ nav ul li a:hover{
     color: var(--sec_text_color);
     cursor: pointer;
 }
+/* nav ul li.highlighted{
+    background-color: transparent;
+    border-right: 1px solid transparent;
+}
+nav ul li.highlighted a{
+    color: var(--sec_text_color);
+} */
 nav ul>div{
     height: 100%;
     border-right: 1px solid var(--border_color);
@@ -174,11 +187,28 @@ input{
 
 @media (max-width: 924px) {
     nav{
-        left: -110%;
+        top: calc(100vh - 60px);
         width: 100%;
+        border-right: none;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        border-right: none;
+        /* padding: 30px 0; */
     }
     nav ul li{
+        border-right: 1px solid var(--border_color);
+        border-bottom: none;
+        border-top: 1px solid var(--border_color);
+        width: 100%;
+    }
+    nav ul li:nth-child(4){
         border-right: none;
+    }
+    nav ul li.highlighted, nav ul .socials{
+        display: none;
     }
     nav ul li:hover{
         background-color: var(--sec_bgcolor);
@@ -219,8 +249,10 @@ main .list{
     margin: 20px;
     height: 70vh;
     overflow-y: scroll;
-    border-top: 2px solid var(--border_color);
     /* border: 2px solid red; */
+}
+main .list .project:nth-child(1){
+    border-top: 2px solid var(--border_color);
 }
 main .list .project{
     padding: 20px;
@@ -301,6 +333,7 @@ main .list .project h5 a:hover{
 @media (max-width: 924px) {
     main{
         width: 100%;
+        height: 100%;
     }
     main .title>h1{
         height: 30px;
