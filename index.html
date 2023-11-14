@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1C452H0VBT"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1C452H0VBT');
+    </script>
+
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,16 +38,23 @@
                     <!-- <div class="nav-items"><img src="./my pic.jpg" alt="My Photo"></div> -->
                 </li>
                 <li>
+                    <input type="radio" name="sidebar" id="con0">
+                    <label for="con0">
+                        <div class="nav-items"><a href="#sec1">Home</a></div>
+                    </label>
+                </li>
+                </li>
+                <li>
                     <input type="radio" name="sidebar" id="con1">
                     <label for="con1">
-                        <div class="nav-items"><a href="">About</a></div>
+                        <div class="nav-items"><a href="#sec2">About</a></div>
                     </label>
                 </li>
                 
                 <li>
                     <input type="radio" name="sidebar" id="con2">
                     <label for="con2">
-                        <div class="nav-items"><a href="./all/projects/projects.html">Projects</a></div>
+                        <div class="nav-items"><a href="#sec3">Projects</a></div>
                     </label>
                 </li>
     
@@ -61,17 +79,94 @@
 
     <!-------------- Main -------------->
     <main>
-        <div class="text">
-            <h1 class="hello">Hi there! How are you?</h1>
-            <h1 class="name">I am <span>Sojith Sunny</span>.</h1><br>
-            <!-- <h1 class="greetings">Nice to meet you!</h1> -->
-            <h1 class="info">Sophomore(S.Y) B.E in Computer Engineering.</h1>
+        <div id="sec1">
+            <div class="home">
+                <div class="text">
+                    <h1 class="hello">Hi there! How are you?</h1>
+                    <h1 class="name">I am <span>Sojith Sunny</span>.</h1><br>
+                    <!-- <h1 class="greetings">Nice to meet you!</h1> -->
+                    <h1 class="info">Sophomore(S.Y) B.E in Computer Engineering.</h1>
+                </div>
+
+                <!--Light Bulb-->
+                <div class="light">
+                    <div class="bulb"></div>
+                    <div class="wire"></div>
+                </div>
+            </div>
         </div>
 
-        <!--Light Bulb-->
-        <div class="light">
-            <div class="bulb"></div>
-            <div class="wire"></div>
+        <div id="sec2">
+            <div class="about">
+                <div class="title">
+                    <h1>About Me</h1>
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+        <div id="sec3">
+            <div class="projects">
+                <div class="title">
+                    <h1>My Projects</h1>
+                    <hr>
+                </div>
+        
+                <div class="list">
+        
+                    <div class="project">
+                        <h3><a href="https://aryagogawale.netlify.app" target="_blank">Arya Gogawale's Personal Portfolio Website <i class="fas fa-external-link-alt"></i></a></h3>
+                        <h4>
+                            <a href="https://github.com/sojith29034/aryas-portfolio-master" target="_blank"><i class="fab fa-github"> </i> Github Repository</a>
+                            <p>Technologies used: HTML, CSS, JS</p>
+                        </h4>
+                    </div>
+        
+                    <div class="project">
+                        <h3><a href="https://sojithsunny.netlify.app/projects/kode%20editor-v3/" target="_blank">Kode Editor v3.0 (Latest) - Online editor for HTML, CSS, JS <i class="fas fa-external-link-alt"></i></a></h3>
+                        <h4>
+                            <a href="https://github.com/sojith29034/portfolio/tree/main_branch/Projects/kode%20editor-v3" target="_blank"><i class="fab fa-github"> </i> Github Repository</a>
+                            <p>Technologies used: HTML, CSS, JS</p>
+                        </h4>
+                        <h5>Versions - 
+                            <a href="https://sojithsunny.netlify.app/projects/kode%20editor-v1/" target="_blank">v1.0</a>,
+                            <a href="https://sojithsunny.netlify.app/projects/kode%20editor-v2/" target="_blank">v2.0</a>,
+                            <a href="https://sojithsunny.netlify.app/projects/kode%20editor-v3/" target="_blank">v3.0(Responsive)</a>
+                        </h5>
+                    </div>
+                    
+                    <div class="project">
+                        <h3><a href="https://sojithsunny.netlify.app/projects/rolex/" target="_blank">Landing Webpage for Rolex Watches <i class="fas fa-external-link-alt"></i></a></h3>
+                        <h4>
+                            <a href="https://github.com/sojith29034/portfolio/tree/main_branch/Projects/Rolex" target="_blank"><i class="fab fa-github"> </i> Github Repository</a>
+                            <p>Technologies used: HTML, CSS, JS</p>
+                        </h4>
+                    </div>
+        
+                    <div class="project">
+                        <h3><a href="https://kodeblox.netlify.app/html/1introduction" target="_blank">Kode.Blox - Learn HTML, CSS online <i class="fas fa-external-link-alt"></i></a></h3>
+                        <h4>
+                            <a href="https://github.com/sojith29034/kode.blox" target="_blank"><i class="fab fa-github"> </i> Github Repository</a>
+                            <p>Technologies used: HTML, CSS, JS</p>
+                        </h4>
+                    </div>
+        
+                    <div class="project">
+                        <h3><a href="https://sojithsunny.netlify.app/projects/dark%20mode/toggle%20switch%20dark%20mode/" target="_blank">Toggle Dark Mode <i class="fas fa-external-link-alt"></i></a></h3>
+                        <h4>
+                            <a href="https://github.com/sojith29034/portfolio/tree/main_branch/Projects/dark%20mode/toggle%20switch%20dark%20mode" target="_blank"><i class="fab fa-github"> </i> Github Repository</a>
+                            <p>Technologies used: HTML, CSS, JS</p>
+                        </h4>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+        <div id="sec4">
+            <div class="contact">
+
+            </div>
         </div>
     </main>
     <!------X------- Main -------X------>

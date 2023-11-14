@@ -7,7 +7,7 @@
     scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
     width: 12px;
     background: #88888811;
 }
@@ -17,6 +17,9 @@
 }
 ::-webkit-scrollbar-thumb:hover{
     background: #11111188;
+} */
+::-webkit-scrollbar{
+    display: none;
 }
 
 
@@ -46,8 +49,6 @@
 }
 
 body{
-    height: 100vh;
-    /* width: 400vw; */
     background-color: var(--bg_color);
     /* border: 2px solid red; */
 }
@@ -135,13 +136,6 @@ nav ul .socials a:hover{
 input{
    display: none;
 }
-#ham:checked ~ nav{
-    left: 0 !important;
-}
-#ham:checked ~ .ham{
-    visibility: hidden;
-    transition: .2s ease-in-out;
-}
 .buttons{
     position: absolute;
     top: 15px;
@@ -149,6 +143,16 @@ input{
     font-size: 28px;
     cursor: pointer;
     color: var(--pri_text_color);
+}
+.ham{
+    position: fixed;
+}
+#ham:checked ~ nav{
+    left: 0 !important;
+}
+#ham:checked ~ .ham{
+    visibility: hidden;
+    transition: .2s ease-in-out;
 }
 #buttons{
     background-color: var(--main_bgcolor);
@@ -187,8 +191,11 @@ input{
 }
 /* --------X----- Navigation -------X------ */
 
-/* ----------------- Main ----------------- */
-main{
+/* ----------------- Home ----------------- */
+#sec1{
+    height: 100vh;
+}
+.home{
     height: 90vh;
     width: 55vw;
     margin: auto;
@@ -198,7 +205,7 @@ main{
     /* background-image: url(../bg.png); */
     /* border: 2px solid red; */
 }
-main h1{
+.home h1{
     text-align: left;
     color: var(--bg_color);
     user-select: none;
@@ -242,7 +249,7 @@ h1.info{
 }
 
 @media (max-width: 924px) {
-    main{
+    .home{
         height: 100vh;
         width: 100vw;
         display: flex;
@@ -319,4 +326,176 @@ h1.info{
 } */
 /* --------X-------- Light Bulb ---------X------- */
 
-/* --------X-------- Main ---------X------- */
+/* --------X-------- Home ---------X------- */
+
+
+
+/* ----------------- About ----------------- */
+.about{
+    height: 90vh;
+    width: 55vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+/* --------X-------- About --------X-------- */
+
+
+
+/* ----------------- Projects ----------------- */
+#sec3{
+    height: 100vh;
+    background-color: var(--bg_color);
+    background-image: url(../all/bg.png);
+    background-size: 60%;
+    background-position-x: right;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    /* border: 2px solid red; */
+}
+@media (max-width: 924px){
+    .projects{
+        background-size: 200%;
+    }
+}
+.projects{
+    height: 90vh;
+    width: calc(100vw - 400px);
+    margin: auto;
+    border: 2px solid transparent;
+    /* border: 2px solid red; */
+}
+.projects .title>h1{
+    height: 70px;
+    line-height: 50px;
+    padding: 10px;
+    color: var(--pri_text_color);
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+    font-weight: 1000;
+    letter-spacing: 4px;
+    /* border-top: 2px solid var(--border_color); */
+    /* border-bottom: 2px solid var(--border_color); */
+    /* background-color: var(--sec_bgcolor); */
+    /* border: 2px solid red; */
+}
+.projects .list{
+    margin: 20px;
+    height: 70vh;
+    overflow-y: scroll;
+    /* border: 2px solid red; */
+}
+.projects .list .project:nth-child(1){
+    border-top: 2px solid var(--border_color);
+}
+.projects .list .project{
+    padding: 20px;
+    width: 100%;
+    border-bottom: 2px solid var(--border_color);
+    /* border: 2px solid red; */
+}
+.projects .list .project:hover{
+    background-color: #11111140;
+}
+.projects .list .project h3 a{
+    color: var(--pri_text_color);
+    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    /* font-family: 'Oxygen Mono', monospace; */
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    position: relative;
+}
+.projects .list .project h3 a::after{
+    content: ' ';
+    position: absolute;
+    background-color: var(--pri_text_color);
+    height: 2px;
+    width: 0;
+    bottom: -5px;
+    left: 0;
+    /* border: 2px solid red; */
+}
+.projects .list .project h3 a:hover:after{
+    width: 100%;
+}
+.projects .list .project h4{
+    width: 50%;
+    color: var(--sec_text_color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+.projects .list .project h4 a{
+    color: var(--pri_text_color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 8px;
+    border: 2px solid var(--pri_text_color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+.projects .list .project h4 a:hover{
+    color: var(--bg_color);
+    background-color: var(--pri_text_color);
+}
+.projects .list .project h5{
+    color: var(--pri_text_color);
+    font-size: 16px;
+    font-family: var(--pri_text_family);
+    padding-top: 10px;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.projects .list .project h5 a{
+    color: var(--pri_text_color);
+    transition: .3s ease-in-out;
+}
+.projects .list .project h5 a:hover{
+    color: var(--sec_text_color);
+}
+
+@media (max-width: 924px) {
+    .projects{
+        width: 100%;
+        height: 100%;
+    }
+    .projects .title>h1{
+        height: 30px;
+        line-height: 30px;
+        margin: 15px;
+        font-size: 32px;
+        padding: 0;
+        text-align: center;
+    }
+    .projects .list{
+        height: calc(100vh - 100px);
+        margin: 15px 5px;
+        overflow-x: hidden;
+    }
+    .projects .list .project{
+        padding: 5px;
+    }
+    .projects .list .project h4{
+        flex-direction: column;
+        width: 100%;
+        align-items:start;
+    }
+    .projects .list .project h4 p{
+        padding-top: 10px;
+    }
+    .projects .list .project h5{
+        width: 100%;
+        display: inline-block;
+    }
+}
+/* --------X-------- Projects ---------X------- */
