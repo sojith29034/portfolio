@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Oxygen+Mono&family=Poppins:wght@300&family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Red+Hat+Display:wght@600&family=Titillium+Web:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@500&family=Pixelify+Sans&display=swap');
 
 *{
     margin: 0;
@@ -32,6 +34,16 @@
     --pri_text_color: rgb(0, 0, 0);
     --sec_text_color: rgb(0, 4, 255);
 
+    
+    /* font family */
+    --nav_text_family: 'Source Code Pro', monospace;
+    --pri_text_family: 'Chakra Petch', sans-serif;
+    --sec_text_family: 'Red Hat Display', sans-serif;
+    --ter_text_family: 'Titillium Web', sans-serif;
+
+    --pri_pixelText: 'Pixelify Sans', sans-serif;
+    --sec_pixelText: 'Handjet', sans-serif;
+
 
     /* dark mode color palette */
     @media (prefers-color-scheme: dark){
@@ -42,10 +54,6 @@
         --pri_text_color: rgb(252, 252, 225);
         --sec_text_color: rgb(59, 255, 245);
     }
-
-
-    /* font family */
-    --pri_text_family:  'Source Code Pro', monospace;
 }
 
 body{
@@ -57,6 +65,70 @@ a{
     text-decoration: none;
 }
 
+
+/* -------------- Section Titles -------------- */
+.title h1{
+    height: 70px;
+    line-height: 50px;
+    padding: 10px;
+    color: var(--pri_text_color);
+    font-family: var(--pri_text_family);
+    font-weight: 500;
+    letter-spacing: 4px;
+    position: relative;
+    text-shadow: 2px 2px 1px red, -2px -2px 2px blue, -3px -3px 1px green;
+    animation: glitch .75s infinite;
+}
+.title h1 span{
+    position: absolute;
+    padding: 0 10px;
+    left: 0;
+    text-shadow: 2px 2px 1px red, -2px -2px 2px blue, -3px -3px 1px green;
+}
+.title h1 span:first-child{
+    left: 1px;
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+    animation: glitch .5s infinite alternate, move .5s infinite;
+}
+.title h1 span:last-child{
+    left: -1px;
+    z-index: 1;
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+    animation: glitch 1s infinite reverse, move .5s reverse infinite;
+}
+@keyframes move{
+    from{
+        left: 0;
+    }
+    to{
+        left: 1px;
+    }
+}
+@keyframes glitch{
+    0%{
+        text-shadow: 3px 3px 1px green, -1px -1px 1px red, -3px -3px 1px blue;
+    }
+    24%{
+        text-shadow: 2px 2px 1px green, -2px -2px 2px red, -3px -3px 1px blue;
+    }
+    25%{
+        text-shadow: 2px 2px 1px blue, -2px -2px 2px green, -3px -3px 1px red;
+    }
+    84%{
+        text-shadow: 2px 2px 1px blue, -2px -2px 2px green, -3px -3px 1px red;
+    }
+    85%{
+        text-shadow: 2px 2px 1px red, -2px -2px 2px blue, -3px -3px 1px red;
+    }
+    100%{
+        text-shadow: 2px 2px 1px green, -2px -2px 2px red, -3px -3px 1px blue;
+    }
+}
+/* -------X------ Section Titles ------X------- */
+
+
+
 /* -------------- Navigation -------------- */
 nav{
     z-index: 2;
@@ -64,15 +136,10 @@ nav{
     height: 100%;
     width: 150px;
     transition: .3s ease-in-out;
-    /* border: 2px solid red; */
 }
 nav ul{
     height: 100vh;
     list-style: none;
-    /* border: 2px solid red; */
-    /* position: relative; 
-    top: 50%;
-    transform: translateY(-40%);*/
 }
 nav ul li{
     height: 60px;
@@ -106,7 +173,7 @@ nav ul li.logo img{
 nav ul li a{
     color: var(--pri_text_color);
     font-size: 22px;
-    font-family: var(--pri_text_family);
+    font-family: var(--nav_text_family);
     transition: .2s ease-in-out;
 }
 nav ul li a:hover{
@@ -212,23 +279,23 @@ input{
 }
 h1.hello{
     font-size: 36px;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--sec_text_family);
     text-shadow: 2px -2px 3px #fff, -1px 2px 3px #000;
 }
 h1.name{
     font-size: 80px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--sec_text_family);
     text-shadow: 3px -3px 4px #fff, -2px 2px 4px #000;
 }
 /* h1.name span:hover{
     text-shadow: -3px 3px 7px #fff, 5px -3px 4px #000;
     transition: ease-in-out .5s;
 } */
-h1.greetings{
+/* h1.greetings{
     font-size: 36px;
     font-family: 'Oxygen Mono', monospace;
     text-shadow: 2px -2px 3px #fff, -1px 2px 3px #000;
-}
+} */
 h1.info{
     font-size: 24px;
     text-shadow: none;
@@ -331,12 +398,19 @@ h1.info{
 
 
 /* ----------------- About ----------------- */
+#sec2{
+    height: 100vh;
+    background-image: url(../all/bg.png);
+    background-size: 60%;
+    background-position-x: right;
+    background-position-y: center;
+    background-repeat: no-repeat;
+}
 .about{
     height: 90vh;
-    width: 55vw;
+    width: calc(100vw - 400px);
     margin: auto;
-    display: flex;
-    align-items: center;
+    /* border: 2px solid red; */
 }
 /* --------X-------- About --------X-------- */
 
@@ -344,14 +418,9 @@ h1.info{
 
 /* ----------------- Projects ----------------- */
 #sec3{
-    height: 100vh;
+    /* height: 100vh; */
     background-color: var(--bg_color);
-    background-image: url(../all/bg.png);
     background-size: 60%;
-    background-position-x: right;
-    background-position-y: center;
-    background-repeat: no-repeat;
-    /* border: 2px solid red; */
 }
 @media (max-width: 924px){
     .projects{
@@ -359,25 +428,9 @@ h1.info{
     }
 }
 .projects{
-    height: 90vh;
     width: calc(100vw - 400px);
     margin: auto;
     border: 2px solid transparent;
-    /* border: 2px solid red; */
-}
-.projects .title>h1{
-    height: 70px;
-    line-height: 50px;
-    padding: 10px;
-    color: var(--pri_text_color);
-    font-family: 'Poppins', sans-serif;
-    margin: 20px;
-    font-weight: 1000;
-    letter-spacing: 4px;
-    /* border-top: 2px solid var(--border_color); */
-    /* border-bottom: 2px solid var(--border_color); */
-    /* background-color: var(--sec_bgcolor); */
-    /* border: 2px solid red; */
 }
 .projects .list{
     margin: 20px;
@@ -400,8 +453,6 @@ h1.info{
 .projects .list .project h3 a{
     color: var(--pri_text_color);
     font-family: 'Open Sans', sans-serif;
-    /* font-family: 'Poppins', sans-serif; */
-    /* font-family: 'Oxygen Mono', monospace; */
     font-size: 20px;
     line-height: 30px;
     letter-spacing: 1px;
